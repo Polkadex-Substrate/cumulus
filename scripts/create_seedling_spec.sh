@@ -17,6 +17,8 @@ relay_chain=$6
 para_id=$7
 sudo=$8
 
+
+
 [ -z "$runtime_path" ] && usage
 [ -z "$name" ] && usage
 [ -z "$id" ] && usage
@@ -39,7 +41,6 @@ cat seedling-spec-plain.json | jq --rawfile code seedling-hex.txt '.genesis.runt
     | jq --arg name $name '.name = $name' \
     | jq --arg id $id '.id = $id' \
     | jq --arg chain_type $chain_type '.chainType = $chain_type' \
-    | jq --argjson bootnodes $bootnodes '.bootNodes = $bootnodes' \
     | jq --arg relay_chain $relay_chain '.relay_chain = $relay_chain' \
     | jq --argjson para_id $para_id '.para_id = $para_id' \
     | jq --arg sudo $sudo '.genesis.runtime.sudo.key = $sudo' \

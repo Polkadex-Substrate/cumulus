@@ -212,6 +212,7 @@ fn seedling_testnet_genesis(
 		},
 		sudo: seedling_runtime::SudoConfig { key: Some(root_key) },
 		parachain_info: seedling_runtime::ParachainInfoConfig { parachain_id },
+		// scheduler: Default::default(),
 		parachain_system: Default::default(),
 	}
 }
@@ -595,14 +596,14 @@ pub fn westmint_development_config() -> WestmintChainSpec {
 					get_account_id_from_seed::<sr25519::Public>("Bob//stash"),
 				],
 				get_account_id_from_seed::<sr25519::Public>("Alice"),
-				1000.into(),
+				2000.into(),
 			)
 		},
 		Vec::new(),
 		None,
 		None,
 		Some(properties),
-		Extensions { relay_chain: "westend".into(), para_id: 1000 },
+		Extensions { relay_chain: "westend".into(), para_id: 2000 },
 	)
 }
 
@@ -645,14 +646,14 @@ pub fn westmint_local_config() -> WestmintChainSpec {
 					get_account_id_from_seed::<sr25519::Public>("Ferdie//stash"),
 				],
 				get_account_id_from_seed::<sr25519::Public>("Alice"),
-				1000.into(),
+				2000.into(),
 			)
 		},
 		Vec::new(),
 		None,
 		None,
 		Some(properties),
-		Extensions { relay_chain: "westend-local".into(), para_id: 1000 },
+		Extensions { relay_chain: "westend-local".into(), para_id: 2000 },
 	)
 }
 
@@ -699,14 +700,14 @@ pub fn westmint_config() -> WestmintChainSpec {
 				Vec::new(),
 				// re-use the Westend sudo key
 				hex!("6648d7f3382690650c681aba1b993cd11e54deb4df21a3a18c3e2177de9f7342").into(),
-				1000.into(),
+				2000.into(),
 			)
 		},
 		Vec::new(),
 		None,
 		None,
 		Some(properties),
-		Extensions { relay_chain: "westend".into(), para_id: 1000 },
+		Extensions { relay_chain: "westend".into(), para_id: 2000 },
 	)
 }
 

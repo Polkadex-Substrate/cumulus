@@ -1,0 +1,15 @@
+./target/release/parachain-collator \
+--alice \
+--collator \
+--force-authoring \
+--chain seedling-spec-raw.json \
+--base-path /tmp/parachain/alice \
+--port 40333 \
+--execution wasm \
+--ws-port 8844 \
+-- \
+--execution wasm \
+--chain ../polkadot/rococo-custom-2-raw.json \
+--port 30343 \
+--bootnodes /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWGVFXfLhvArZdMVa38K9Kgu8F9robFYgv8ey5pguEVLWo \
+--ws-port 9977

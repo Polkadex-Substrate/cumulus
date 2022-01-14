@@ -165,6 +165,27 @@ impl cumulus_pallet_parachain_system::Config for Runtime {
 
 impl parachain_info::Config for Runtime {}
 
+// Define the types required by the Scheduler pallet.
+// parameter_types! {
+//     pub MaximumSchedulerWeight: Weight = 10_000_000;
+//     pub const MaxScheduledPerBlock: u32 = 50;
+// 	pub const NoPreimagePostponement: Option<u32> = Some(10);
+// }
+
+// impl pallet_scheduler::Config for Runtime {
+// 	type Event = Event;
+// 	type Origin = Origin;
+// 	type PalletsOrigin = OriginCaller;
+// 	type Call = Call;
+// 	type MaximumWeight = MaximumSchedulerWeight;
+// 	type ScheduleOrigin = frame_system::EnsureRoot<AccountId>;
+// 	type OriginPrivilegeCmp = frame_support::traits::EqualPrivilegeOnly;
+// 	type MaxScheduledPerBlock = MaxScheduledPerBlock;
+// 	type WeightInfo = ();
+// 	type PreimageProvider = ();
+// 	type NoPreimagePostponement = NoPreimagePostponement;
+// }
+
 construct_runtime! {
 	pub enum Runtime where
 		Block = Block,
@@ -178,6 +199,7 @@ construct_runtime! {
 			Pallet, Call, Config, Storage, Inherent, Event<T>, ValidateUnsigned,
 		},
 		ParachainInfo: parachain_info::{Pallet, Storage, Config},
+		// Scheduler: pallet_scheduler
 		SoloToPara: cumulus_pallet_solo_to_para::{Pallet, Call, Storage, Event},
 	}
 }
@@ -210,7 +232,7 @@ pub type SignedExtra = (
 	frame_system::CheckGenesis<Runtime>,
 	frame_system::CheckEra<Runtime>,
 	frame_system::CheckNonce<Runtime>,
-	cumulus_pallet_solo_to_para::CheckSudo<Runtime>,
+	// cumulus_pallet_solo_to_para::CheckSudo<Runtime>,
 );
 /// Unchecked extrinsic type as expected by this runtime.
 pub type UncheckedExtrinsic = generic::UncheckedExtrinsic<Address, Call, Signature, SignedExtra>;

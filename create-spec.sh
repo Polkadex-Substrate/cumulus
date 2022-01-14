@@ -1,0 +1,1 @@
+./scripts/create_seedling_spec.sh target/release/wbuild/seedling-runtime/seedling_runtime.compact.compressed.wasm seedling_local_testnet 1 Local /ip4/127.0.0.1/tcp/30333/p2p/12D3KooWL4ozPJdQ9rqwmuhK1hy7LijK97KSaKgGoiEEJqnPpyBF polkadot 2000 5GrwvaEF5zXb26Fz9rcQpDWS57CtERHpNehXCPcNoHGKutQY

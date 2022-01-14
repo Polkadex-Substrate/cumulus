@@ -29,6 +29,7 @@ frame-executive = { git = "https://github.com/paritytech/substrate", default-fea
 frame-system = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 pallet-sudo = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 pallet-balances = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
+pallet-scheduler = { git = "https://github.com/paritytech/substrate", default-features = false, branch = "master" }
 
 # Cumulus dependencies
 cumulus-pallet-parachain-system = { path = "../../pallets/parachain-system", default-features = false }
@@ -61,6 +62,7 @@ std = [
 	"frame-system/std",
 	"pallet-sudo/std",
 	"pallet-balances/std",
+	"pallet-scheduler/std",
 	"parachain-info/std",
 	"cumulus-pallet-parachain-system/std",
 	"cumulus-pallet-solo-to-para/std",
